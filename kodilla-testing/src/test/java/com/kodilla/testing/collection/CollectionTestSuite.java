@@ -1,6 +1,6 @@
 package com.kodilla.testing.collection;
 
-import com.kodilla.testing.collection.OddNumbersExterminator;
+import com.kodilla.testing.forum.collection.OddNumbersExterminator;
 import org.junit.jupiter.api.*;
 
 import java.util.Arrays;
@@ -33,7 +33,7 @@ public class CollectionTestSuite {
         Assertions.assertTrue(result.isEmpty());
     }
 
-    @DisplayName("When number list is not empty, then sholud return even numbers list")
+    @DisplayName("When number list is not empty, then should return even numbers list")
     @Test
     public void testOddNumbersExterminatorNormalList(){
         //Given
