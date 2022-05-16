@@ -91,6 +91,32 @@ public class ShapeCollectorTestSuite {
         }
 
         @Test
+        void testGetFigureOutOfRange(){
+            //Given
+            ShapeCollector shapeCollector = new ShapeCollector();
+            Square square = new Square("square1",2);
+
+            //When
+            Shape retrivedShape = shapeCollector.getFigure(2);
+
+            //Then
+            assertEquals(null, retrivedShape);
+        }
+
+        @Test
+        void testGetFigureNegativeIndex(){
+            //Given
+            ShapeCollector shapeCollector = new ShapeCollector();
+            Square square = new Square("square1",2);
+
+            //When
+            Shape retrivedShape = shapeCollector.getFigure(-1);
+
+            //Then
+            assertEquals(null, retrivedShape);
+        }
+
+        @Test
         void testShowFigures(){
             //Given
             ShapeCollector shapeCollector = new ShapeCollector();
