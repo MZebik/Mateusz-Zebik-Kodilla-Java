@@ -2,7 +2,6 @@ package com.kodilla.testing.shape;
 
 import org.junit.jupiter.api.*;
 
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -27,21 +26,22 @@ public class ShapeCollectorTestSuite {
         System.out.println("Preparing to execute test #" + testCounter);
     }
 
+    @Test
+    void testAddFigure(){
+        //Given
+        ShapeCollector shapeCollector = new ShapeCollector();
+        Square square = new Square("square1" ,2);
+
+        //When
+        shapeCollector.addFigure(square);
+
+        //Then
+        assertEquals(1,shapeCollector.getShapesQuantity());
+    }
     @Nested
     @DisplayName("Tests for editing collection")
     class EditingCollectionTests{
-        @Test
-        void testAddFigure(){
-            //Given
-            ShapeCollector shapeCollector = new ShapeCollector();
-            Square square = new Square("square1" ,2);
 
-            //When
-            shapeCollector.addFigure(square);
-
-            //Then
-            assertEquals(1,shapeCollector.getShapesQuantity());
-        }
 
         @Test
         void testRemoveFigure(){
@@ -94,7 +94,6 @@ public class ShapeCollectorTestSuite {
         void testGetFigureOutOfRange(){
             //Given
             ShapeCollector shapeCollector = new ShapeCollector();
-            Square square = new Square("square1",2);
 
             //When
             Shape retrivedShape = shapeCollector.getFigure(2);
@@ -107,7 +106,6 @@ public class ShapeCollectorTestSuite {
         void testGetFigureNegativeIndex(){
             //Given
             ShapeCollector shapeCollector = new ShapeCollector();
-            Square square = new Square("square1",2);
 
             //When
             Shape retrivedShape = shapeCollector.getFigure(-1);
