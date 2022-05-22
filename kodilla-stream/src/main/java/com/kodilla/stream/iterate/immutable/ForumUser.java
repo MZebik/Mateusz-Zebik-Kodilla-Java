@@ -1,11 +1,13 @@
-package com.kodilla.stream.immutable;
+package com.kodilla.stream.iterate.immutable;
+
+import jdk.swing.interop.SwingInterOpUtils;
 
 public final class ForumUser {
 
     private final String userName;
     private final String realName;
 
-    public ForumUser(String final userName, String final realName) {
+    public ForumUser(final String userName, final String realName) {
         this.userName = userName;
         this.realName = realName;
     }
@@ -17,4 +19,5 @@ public final class ForumUser {
     public String getRealName() {
         return realName;
     }
+
 }

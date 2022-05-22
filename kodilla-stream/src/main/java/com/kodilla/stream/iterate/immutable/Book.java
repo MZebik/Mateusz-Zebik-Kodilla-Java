@@ -1,4 +1,4 @@
-package com.kodilla.stream.immutable;
+package com.kodilla.stream.iterate.immutable;
 
 public final class Book {
 
