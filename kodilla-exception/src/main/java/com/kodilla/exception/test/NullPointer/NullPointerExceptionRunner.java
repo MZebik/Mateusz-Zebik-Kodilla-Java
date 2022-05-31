@@ -1,4 +1,4 @@
-package com.kodilla.exception.NullPointer;
+package com.kodilla.exception.test.NullPointer;
 
 public class NullPointerExceptionRunner {
 
