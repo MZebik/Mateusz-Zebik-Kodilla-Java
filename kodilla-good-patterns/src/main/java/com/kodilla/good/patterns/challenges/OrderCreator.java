@@ -2,9 +2,9 @@ package com.kodilla.good.patterns.challenges;
 
 public class OrderCreator {
 
-    User user;
-    Product product;
-    double quantity;
+    private User user;
+    private Product product;
+    private double quantity;
 
     public OrderCreator(User user, Product product, double quantity) {
         this.user = user;
