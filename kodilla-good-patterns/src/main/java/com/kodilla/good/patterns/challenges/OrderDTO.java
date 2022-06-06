@@ -1,7 +1,6 @@
 package com.kodilla.good.patterns.challenges;
 
 public class OrderDTO {
-
     private User user;
     private OrderCreator order;
     private boolean productIsAvailable;
