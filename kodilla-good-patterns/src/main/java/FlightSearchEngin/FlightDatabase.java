@@ -14,6 +14,7 @@ public final class FlightDatabase {
         flights.add(new Flight("Szczecin", "Kraków"));
         flights.add(new Flight("Gdańsk", "Warszawa"));
         flights.add(new Flight("Gdańsk", "Kraków"));
+        flights.add(new Flight("Katowice", "Szczecin"));
 
         return new ArrayList<>(flights);
     }

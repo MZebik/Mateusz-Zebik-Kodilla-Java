@@ -43,21 +43,26 @@ public class FlightSearch {
             System.out.println("Direct flight does not exist! Try to find fly through");
         }
     }
-//    public void findflightThrough(){
-//        if(!check) {
-//           List<String> arrivals = FlightDatabase.getFlights().stream()
-//                    .filter(flights -> flights.getDeparture().equals(departure))
-//                    .map(flights -> flights.getArrival())
-//                    .collect(Collectors.toList());
-//
-//            for(int i = 0; i<arrivals.size(); i++){
-//                int finalI = i;
-//                FlightDatabase.getFlights().stream()
-//                    .filter(flights -> flights.equals(new Flight(arrivals.get(finalI),arrival)
-//                    .map(flights -> flights.toString())
-//                    .forEach(System.out::println);}
-//        } else { System.out.println("Exist direct fly");}
-//    }
+    public void findflightThrough(){
+        if(!check) {
+           List<Flight> departures = FlightDatabase.getFlights().stream()
+                    .filter(flights -> flights.getDeparture().equals(departure))
+                    .collect(Collectors.toList());
+           List<Flight> arrivals = FlightDatabase.getFlights().stream()
+                   .filter(flights -> flights.getArrival().equals(arrival))
+                   .collect(Collectors.toList());
+
+            for(int i = 0; i<departures.size(); i++){
+                for(Flight flights: arrivals){
+                    if(flights.getDeparture().equals(departures.get(i).getArrival())){
+                        String firstPart = departures.get(i).toString();
+                        String lastPart = flights.toString();
+                        System.out.println("First flight: " + firstPart + "\n" + "Last part: " + lastPart);
+                    }
+                }
+            }
+        } else { System.out.println("Exist direct fly");}
+    }
     public void flightThrough(){
         String flight1 = FlightDatabase.getFlights().stream()
                 .filter(flights -> flights.equals(new Flight(departure, through)))
