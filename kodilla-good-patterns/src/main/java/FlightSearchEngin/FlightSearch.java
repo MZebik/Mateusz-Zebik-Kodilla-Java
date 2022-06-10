@@ -1,5 +1,6 @@
 package FlightSearchEngin;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -15,21 +16,18 @@ public class FlightSearch {
         this.through = through;
     }
 
-    public void allFlightsFrom(){
+    public List<Flight> allFlightsFrom(){
 
-        String allFlights = FlightDatabase.getFlights().stream()
+        return FlightDatabase.getFlights().stream()
                 .filter(flights -> flights.getDeparture().equals(departure))
-                .map(flights -> flights.toString())
-                .collect(Collectors.joining("\n"));
-        System.out.println("All flights from: " + departure + "\n" + allFlights);
-    }
-    public void allFlightsTo(){
+                .collect(Collectors.toList());
 
-        String allFlights = FlightDatabase.getFlights().stream()
+    }
+    public List<Flight> allFlightsTo(){
+
+        return FlightDatabase.getFlights().stream()
                 .filter(flights -> flights.getArrival().equals(arrival))
-                .map(flights -> flights.toString())
-                .collect(Collectors.joining("\n"));
-        System.out.println("All flights to: " + arrival + "\n" + allFlights);
+                .collect(Collectors.toList());
     }
     public void checkFlight() {
         long flightCheck = FlightDatabase.getFlights().stream()
@@ -46,9 +44,9 @@ public class FlightSearch {
     public void findflightThrough(){
         if(!check) {
            List<Flight> departures = FlightDatabase.getFlights().stream()
-                    .filter(flights -> flights.getDeparture().equals(departure))
-                    .collect(Collectors.toList());
-           List<Flight> arrivals = FlightDatabase.getFlights().stream()
+                   .filter(flights -> flights.getDeparture().equals(departure))
+                   .collect(Collectors.toList());
+            List<Flight> arrivals = FlightDatabase.getFlights().stream()
                    .filter(flights -> flights.getArrival().equals(arrival))
                    .collect(Collectors.toList());
 
