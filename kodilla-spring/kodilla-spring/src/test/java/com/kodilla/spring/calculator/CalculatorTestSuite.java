@@ -9,14 +9,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @SpringBootTest
 public class CalculatorTestSuite {
 
-    @Autowired
-    Display display;
-
+@Autowired
+private Calculator calculator;
     @Test
     void testCalculations(){
         //Given
-        Calculator calculator = new Calculator(display);
-
         //When
         double Add = calculator.add(2,2);
         double Sub = calculator.sub(4,2);
