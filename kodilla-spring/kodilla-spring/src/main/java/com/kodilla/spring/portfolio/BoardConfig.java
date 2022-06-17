@@ -11,9 +11,19 @@ import java.util.ArrayList;
 @Configuration
 public class BoardConfig {
 
+    @Autowired
+    @Qualifier("toDoList")
+    TaskList toDo;
+    @Autowired
+    @Qualifier("inProgressList")
+    TaskList inProgress;
+    @Autowired
+    @Qualifier("doneList")
+    TaskList done;
+
     @Bean
     public Board getBoard(){
-        return new Board(toDoList(), inProgressList(), doneList());
+        return new Board(toDo, inProgress, done);
     }
 
     @Bean(name = "toDoList")
