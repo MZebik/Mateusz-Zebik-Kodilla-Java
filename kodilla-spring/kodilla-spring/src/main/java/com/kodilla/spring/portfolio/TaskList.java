@@ -7,10 +7,10 @@ public class TaskList {
     private List<String> tasks;
 
     public TaskList() {
-       this.tasks = new ArrayList<>();
+        this.tasks = new ArrayList<>();
     }
 
-    public void addTask(String newTask){
+    public void addTask(String newTask) {
         tasks.add(newTask);
     }
 

@@ -10,7 +10,8 @@ public class Board {
         this.inProgressList = inProgressList;
         this.doneList = doneList;
     }
-    public void addTaskToList(TaskList list, String task){
+
+    public void addTaskToList(TaskList list, String task) {
         list.addTask(task);
     }
 
