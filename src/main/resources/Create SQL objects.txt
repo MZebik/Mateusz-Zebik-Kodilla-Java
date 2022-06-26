@@ -1,0 +1,54 @@
+create table ISSUELISTS
+(
+    ID SERIAL PRIMARY KEY,
+    NAME VARCHAR(100)
+);
+CREATE TABLE ISSUES
+(
+    ID SERIAL PRIMARY KEY,
+    ISSUELIST_ID BIGINT UNSIGNED NOT NULL,
+    FOREIGN KEY (ISSUELIST_ID) REFERENCES ISSUELISTS(ID),
+    SUMMARY VARCHAR(100),
+    DESCRIPTION VARCHAR(1000),
+    USER_ID_ASSIGNEDTO BIGINT UNSIGNED NOT NULL,
+    FOREIGN KEY (USER_ID_ASSIGNEDTO) REFERENCES USERS(ID)
+);
+INSERT INTO ISSUELISTS (NAME)
+VALUES ('ToDo');
+INSERT INTO ISSUELISTS (NAME)
+VALUES ('In progress');
+INSERT INTO ISSUELISTS (NAME)
+VALUES ('Done');
+
+INSERT INTO ISSUES (ISSUELIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES (1, 'Microservice for taking temperature', 'Write and test the microservice taking the temperaure from external service', 1);
+INSERT INTO ISSUES (ISSUELIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES (1, 'HQLs for analysis', 'Prepare some HQL queries for analysis', 2);
+INSERT INTO ISSUES (ISSUELIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES (1, 'Temperatures entity', 'Prepare entity for temperatures', 3);
+INSERT INTO ISSUES(ISSUELIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES (1, 'Own logger', 'Refactor company logger to meet our needs', 4);
+INSERT INTO ISSUES (ISSUELIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES (1, 'Optimize searching', 'Archive data searching has to be optimized', 5);
+INSERT INTO ISSUES (ISSUELIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES (2, 'Microservice for taking temperature', 'Write and test the microservice taking the temperaure from external service', 1);
+INSERT INTO ISSUES (ISSUELIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES (2, 'HQLs for analysis', 'Prepare some HQL queries for analysis', 2);
+INSERT INTO ISSUES (ISSUELIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES (2, 'Temperatures entity', 'Prepare entity for temperatures', 3);
+INSERT INTO ISSUES(ISSUELIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES (2, 'Own logger', 'Refactor company logger to meet our needs', 4);
+INSERT INTO ISSUES (ISSUELIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES (2, 'Optimize searching', 'Archive data searching has to be optimized', 5);
+INSERT INTO ISSUES (ISSUELIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES (3, 'Microservice for taking temperature', 'Write and test the microservice taking the temperaure from external service', 1);
+INSERT INTO ISSUES (ISSUELIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES (3, 'HQLs for analysis', 'Prepare some HQL queries for analysis', 2);
+INSERT INTO ISSUES (ISSUELIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES (3, 'Temperatures entity', 'Prepare entity for temperatures', 3);
+INSERT INTO ISSUES(ISSUELIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES (3, 'Own logger', 'Refactor company logger to meet our needs', 4);
+INSERT INTO ISSUES (ISSUELIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES (3, 'Optimize searching', 'Archive data searching has to be optimized', 5);
+SELECT * FROM ISSUELISTS;
+SELECT * FROM ISSUES;
