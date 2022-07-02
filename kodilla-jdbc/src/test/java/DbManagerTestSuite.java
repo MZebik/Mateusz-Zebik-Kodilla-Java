@@ -64,4 +64,6 @@ public class DbManagerTestSuite {
         assertEquals(2, counter);
 
     }
+   DbManager table[];
+
 }
