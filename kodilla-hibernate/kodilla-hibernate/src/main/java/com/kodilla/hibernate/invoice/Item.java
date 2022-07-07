@@ -28,7 +28,7 @@ public class Item {
     @Id
     @GeneratedValue
     @NotNull
-    @Column(name = "COLUMN")
+    @Column(name = "ID")
     public int getId() {
         return id;
     }
