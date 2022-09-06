@@ -9,6 +9,10 @@ import java.util.List;
         name = "Company.retrieveShortCompanyName",
         query = "FROM Company WHERE SUBSTRING(name,1,3) = :SHORTCUT "
 )
+@NamedQuery(
+        name = "Company.retriveShortCompanyNamev2",
+        query = "FROM Company WHERE COMPANY_NAME LIKE :ARG"
+)
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
