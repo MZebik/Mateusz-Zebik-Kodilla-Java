@@ -23,13 +23,15 @@ public class FindFacade {
         this.employeeDao = employeeDao;
     }
 
-    public List<Company> findCompanyByShortcutName(String arg) {
-        List<Company> companies = companyDao.retriveShortCompanyNamev2(arg);
+    public List<Company> findCompanyByShortcutName(String ARG) {
+        ARG = "%" + ARG + "%";
+        List<Company> companies = companyDao.retriveShortCompanyNamev2(ARG);
         return companies;
     }
 
-    public List<Employee> findEmployeeByShortcutOfLastname(String arg) {
-        List<Employee> employees = employeeDao.retriveShortLastName(arg);
+    public List<Employee> findEmployeeByShortcutOfLastname(String ARG) {
+        ARG = "%" + ARG + "%";
+        List<Employee> employees = employeeDao.retriveShortLastName(ARG);
         return employees;
     }
 

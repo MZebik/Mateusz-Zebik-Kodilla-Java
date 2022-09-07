@@ -35,13 +35,13 @@ class findFacadeTest {
         findFacade.getEmployeeDao().save(lindaKovalsky);
 
         // When
-        List<Company> shortcut = findFacade.findCompanyByShortcutName("%Sof%");
-        List<Employee> shortLastName = findFacade.findEmployeeByShortcutOfLastname("%Smi%");
+        List<Company> companies = findFacade.findCompanyByShortcutName("Sof");
+        List<Employee> employees = findFacade.findEmployeeByShortcutOfLastname("Smi");
 
         // Then
 
-        assertEquals("Software Machine", shortcut.get(0).getName());
-        assertEquals("Smith", shortLastName.get(0).getLastname());
+        assertEquals("Software Machine", companies.get(0).getName());
+        assertEquals("Smith", employees.get(0).getLastname());
 
         //CleanUp
         findFacade.getCompanyDao().deleteAll();
