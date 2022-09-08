@@ -24,13 +24,11 @@ public class FindFacade {
     }
 
     public List<Company> findCompanyByShortcutName(String ARG) {
-        ARG = "%" + ARG + "%";
         List<Company> companies = companyDao.retriveShortCompanyNamev2(ARG);
         return companies;
     }
 
     public List<Employee> findEmployeeByShortcutOfLastname(String ARG) {
-        ARG = "%" + ARG + "%";
         List<Employee> employees = employeeDao.retriveShortLastName(ARG);
         return employees;
     }

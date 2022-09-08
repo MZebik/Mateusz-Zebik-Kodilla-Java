@@ -11,7 +11,7 @@ import java.util.List;
 )
 @NamedQuery(
         name = "Company.retriveShortCompanyNamev2",
-        query = "FROM Company WHERE COMPANY_NAME LIKE :ARG"
+        query = "FROM Company WHERE COMPANY_NAME LIKE CONCAT('%', :ARG, '%')"
 )
 @Entity
 @Table(name = "COMPANIES")
