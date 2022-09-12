@@ -32,4 +32,11 @@ public class Calculator {
             throw new ArithmeticException("Factorial argument is negative!");
         }
     }
+    public  int fibonacci(int n) {
+        if(n > 1) {
+            return (fibonacci(n-1))+(fibonacci(n-2));
+        } else {
+            return n;
+        }
+    }
 }

@@ -65,4 +65,18 @@ class CalculatorTestSuite {
         System.out.println(result);
         assertTrue(BigDecimal.ONE.compareTo(result) < 0);
     }
+    @Test
+    void testFibonacci() {
+        // Given
+        // When
+        int result0 = calculator.fibonacci(0);
+        int result1 = calculator.fibonacci(1);
+        int result2 = calculator.fibonacci(2);
+        int result8 = calculator.fibonacci(8);
+        // Then
+        assertEquals(0, result0);
+        assertEquals(1, result1);
+        assertEquals(1, result2);
+        assertEquals(21, result8);
+    }
 }
